@@ -21,10 +21,13 @@ dattor <- function(filename, assign = T){ #This function will take a filename, a
   return(rdata)
 }
 
-datasets <- list.files(path="2014", pattern="*.dat", full.names=T, recursive=FALSE)
-datasets <- sub("^([^.]*).*", "\\1", datasets)
+yearsofdata = 1997:2014 #range of years we want to do this for
 
-lapply(datasets, dattor) #loops through the list of files and applies the functio 'dattor', which we have above
+for (i in yearsofdata){ #for all the years in that range
+  datasets <- list.files(path=toString(i), pattern="*.dat", full.names=T, recursive=FALSE) #what are the files in that directory
+  datasets <- sub("^([^.]*).*", "\\1", datasets) #removes the .dat extension
+  lapply(datasets, dattor) #loops through the list of files and applies the functio 'dattor', which we have above
+}
 
 #RANDOM CRAP BELOW
 
