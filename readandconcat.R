@@ -1,6 +1,3 @@
-
-setwd("C:/Users/Bryan/Desktop")
-
 #We're going to install the package SAScii to use the SAS input instructions to read the .dat files.
 install.packages('SAScii') 
 library('SAScii')
