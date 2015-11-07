@@ -239,14 +239,14 @@ PROC FORMAT LIBRARY=LIBRARY;
       000                = "000 None"
       997                = "997 Refused"
       998                = "998 Not ascertained"
-      999                = "999 Don’t know"
+      999                = "999 DonÂ’t know"
    ;
    VALUE SCP062X
       1                  = "1 Yes"
       2                  = "2 No"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 DonÂ’t know"
    ;
    VALUE SCP083X
       1                  = "1 Better"
@@ -321,7 +321,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       2                  = "2 Not mentioned"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 DonÂ’t know"
    ;
    VALUE SCP132X
       0                  = "0 Never"
@@ -353,7 +353,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       2                  = "2 No"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t' know"
+      9                  = "9 DonÂ’t' know"
    ;
    VALUE SCP161X
       97                 = "97 Refused"
@@ -411,7 +411,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       4                  = "4 Over a year"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 DonÂ’t know"
    ;
    VALUE SCP178X
       1                  = "1 Not at all"
@@ -434,21 +434,21 @@ PROC FORMAT LIBRARY=LIBRARY;
       2                  = "2 Not ascertained"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 DonÂ’t know"
    ;
    VALUE SCP244X
       1                  = "1 Mentioned"
       2                  = "2 Not mentioned"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t' know"
+      9                  = "9 DonÂ’t' know"
    ;
    VALUE SCP267X
       1                  = "1 Mentioned"
       2                  = "2 Not mentioned"
       7                  = "7 Refused"
       8                  = "8 Not mentioned"
-      9                  = "9 Don’t know"
+      9                  = "9 DonÂ’t know"
    ;
    VALUE SCP273X
       01                 = 
@@ -473,7 +473,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       4                  = "4 A lot"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 DonÂ’t know"
    ;
    VALUE SCP299X
       1                  = "1 1 vaccination or dose"

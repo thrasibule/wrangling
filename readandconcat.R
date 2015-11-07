@@ -15,16 +15,20 @@ object.size(data) #Returns how large the object is (in bytes) - just to get a se
 #We might be able to merge using 'HHX' - household number.
 #In that case, we want to scrape the data into different folders for each year, loop through all the folders, and join all the files in each of the folders.
 
-dattor <- function(filename, assign = T){ #This function will take a filename, and return a R object
-  sasinst <- readChar(paste(filename, '.sas',sep=''), file.info(paste(filename, '.sas',sep=''))$size) #This is where the .sas input instructions are
-  rdata <- read.SAScii(paste(filename,'.dat',sep=''), paste(filename,'.sas',sep=''), beginline = 1)  #This reads the file to a variable named 'data'
+dattor <- function(fname, assign = T){ #This function will take a filename, and return a R object
+  year<-unlist(strsplit(fname,"/"))[1]
+  filename<-unlist(strsplit(fname,"/"))[2]
+  sasinst <- readChar(paste(fname, '.sas',sep=''), file.info(paste(fname, '.sas',sep=''))$size) #This is where the .sas input instructions are
+  rdata <- read.SAScii(paste(fname,'.dat',sep=''), paste(fname,'.sas',sep=''), beginline = 1)  #This reads the file to a variable named 'data'
   if (assign == T){
-  assign(filename, rdata, envir = .GlobalEnv)
+    assign(filename, rdata, envir = .GlobalEnv)
   }
+  write.csv(get(filename),paste0(year,"/",filename,".csv"),row.names=F)
   return(rdata)
 }
 
 yearsofdata = 1997:2014 #range of years we want to do this for
+yearsofdata = 2013
 
 for (i in yearsofdata){ #for all the years in that range
   datasets <- list.files(path=toString(i), pattern="*.dat", full.names=T, recursive=FALSE) #what are the files in that directory

@@ -554,7 +554,7 @@ PROC FORMAT LIBRARY=LIBRARY;
    VALUE PEP428X
       97                 = "97 Refused"
       98                 = "98 Not ascertained"
-      99                 = "99 Don’t know"
+      99                 = "99 Don't know"
    ;
    VALUE PEP432X
       01                 = "01 Through employer"
@@ -585,7 +585,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       2                  = "2 No"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 Don't know"
    ;
    VALUE PEP443X
       40000              = "40000 $40,000 or more"
@@ -596,7 +596,7 @@ PROC FORMAT LIBRARY=LIBRARY;
    VALUE PEP444X
       997                = "997 Refused"
       998                = "998 Not ascertained"
-      999                = "999 Don’t know"
+      999                = "999 Don't know"
    ;
    VALUE PEP445X
       1                  = "1 HMO/IPA"
@@ -636,7 +636,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       4                  = "4 Not confident at all"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 Don't know"
    ;
    VALUE PEP509X
       1                  = "1 TRICARE Prime"
@@ -811,7 +811,7 @@ PROC FORMAT LIBRARY=LIBRARY;
       4                  = "4 Not at all"
       7                  = "7 Refused"
       8                  = "8 Not ascertained"
-      9                  = "9 Don’t know"
+      9                  = "9 Don't know"
    ;
 
 DATA NHIS.PERSONSX;
