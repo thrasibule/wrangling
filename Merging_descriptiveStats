@@ -1,0 +1,41 @@
+setwd("C:/Paarth/Nidhi")
+require(foreign)
+
+family2014 = read.csv("family2014.csv", header=T)
+
+dat1 = read.delim("familyxx.dat",sep="\t")
+summary = readPDF()
+
+install.packages('SAScii') 
+library('SAScii')
+sasinstructions <- readChar('familyxx2014.sas', file.info('familyxx2014.sas')$size) #This is where the .sas input instructions are
+family2014 <- read.SAScii( 'familyxx.dat', 'familyxx2014.sas' , beginline = 1)    #This reads the file to a variable named 'data'
+
+sasinstructions <- readChar('househld2014.sas', file.info('househld2014.sas')$size) #This is where the .sas input instructions are
+househld2014 <- read.SAScii( 'househld.dat', 'househld2014.sas' , beginline = 1)    #This reads the file to a variable named 'data'
+
+sasinstructions <- readChar('personsx2014.sas', file.info('personsx2014.sas')$size) #This is where the .sas input instructions are
+persons2014 <- read.SAScii( 'personsx.dat', 'personsx2014.sas' , beginline = 1)    #This reads the file to a variable named 'data'
+
+##########Household and Family extracted. Noting down primary keys below#########
+### SRVY_YR, HHX
+require(caret)
+
+Fulldata <- merge(househld2014,family2014,by.x="HHX",by.y="HHX",all.y=T)
+Fulldata1 <- merge(persons2014,Fulldata,by=c("HHX","FMX"),all.x=T)
+
+
+
+######################Descriptive stats##################################
+
+breaks = c(0,20,40,60,80)
+Fulldata1$Age = cut(Fulldata1$AGE_P,breaks)
+
+table(Fulldata1$Age)/nrow(Fulldata1)####Stratified sample across age
+levels(Fulldata1$LAHCC13) = c("Mentioned","not mentioned","refused","not ascertained","don't know")
+cat("Proportions of data ")
+table(Fulldata1$LAHCC13)/nrow(Fulldata1[which(Fulldata1$AGE_P <=20),])
+
+plot(AGE_P~LAHCC13,data=Fulldata1,xlab = "ADHD",ylab = "Age")
+
+
